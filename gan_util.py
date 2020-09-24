@@ -8,11 +8,11 @@ from tensorflow.keras.layers import *
 from tensorflow.keras.losses import binary_crossentropy
 from tensorflow.keras.optimizers import Adam
 
+device = tf.device("/GPU:0")
 def select_gpu():
     if tf.device("/GPU:0"):
         device = tf.device("/GPU:0")
     
-
 def gan(gen, dis):
   with device:
     dis.trainable = False
